@@ -11,6 +11,8 @@
   <![endif]-->
   <style>
 body { margin:0; padding:0; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
 </style>
   </head>
@@ -42,7 +44,8 @@ h1 {
 #map-desc {
 	display: block;
     font-weight: normal; 
-    line-height: 16px;     
+    line-height: 16px;
+    margin-bottom: 5px;     
 }
 
 #map-ui {
@@ -116,7 +119,8 @@ h1 {
   </div>
 <div id="map-titleBlock">
       <h1><span id="map-hd">FCC Mobile Speed Test</span> </h1>
-      <div id="map-desc">This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.</div>      
+      <div id="map-desc">This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="google_play">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="app_store">iTunes app store</a>.</div>      
+      <a href="http://www.fcc.gov/measuring-broadband-america/mobile" target="about_map" style="float: right;">Learn more about these maps &raquo;</a>
   </div>
 <script>
 var map = L.mapbox.map('map', 'fcc.map-kzt95hy6', {attributionControl: false,maxZoom:8})
