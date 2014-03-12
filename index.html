@@ -170,27 +170,27 @@ var ds_vz_GC = L.mapbox.gridControl(ds_vz_GL, {follow: true});
 var mapHd = {
 	mayor: {
 		title: 'FCC Mobile Speed Test',
-		description: 'This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	},
 	ds_all: {
 		title: 'Median Speeds - Combined',
-		description: 'This map represents the median mobile download speed for tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the median mobile download speed for tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	},
 	ds_att: {
 		title: 'Median Speeds - AT&T',
-		description: 'This map represents the median mobile download speed for tests collected to date on the AT&T network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the median mobile download speed for tests collected to date on the AT&T network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	},
 	ds_sprint: {
 		title: 'Median Speeds - Sprint',
-		description: 'This map represents the median mobile download speed for tests collected to date on the Sprint network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the median mobile download speed for tests collected to date on the Sprint network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	},
 	ds_tmobile: {
 		title: 'Median Speeds - T-Mobile',
-		description: 'This map represents the median mobile download speed for tests collected to date on the T-Mobile network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the median mobile download speed for tests collected to date on the T-Mobile network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	},
 	ds_vz: {
 		title: 'Median Speeds - Verizon',
-		description: 'This map represents the median mobile download speed for tests collected to date on the Verizon network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.'	
+		description: 'This map represents the median mobile download speed for tests collected to date on the Verizon network by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.'	
 	}
 }
 
@@ -212,7 +212,7 @@ d3.selectAll(".sel").on("click", function(){
         map.legendControl.addLegend(eval(tileName+"_TL").getTileJSON().legend);
 		
 		d3.select('#map-hd').text(mapHd[this.id].title);
-		d3.select('#map-desc').text(mapHd[this.id].description);		
+		d3.select('#map-desc').html(mapHd[this.id].description);		
     }
 });
  
