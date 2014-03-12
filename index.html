@@ -9,101 +9,30 @@
   <!--[if lte IE 8]>
     <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.ie.css' rel='stylesheet'>
   <![endif]-->
-  <style>
-body { margin:0; padding:0; }
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-#map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
   </head>
   <body>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script> 
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 <style>
-body { font: 12px/18px 'Helvetica Neue',Arial,Helvetica,sans-serif; }
+body { font: 12px/18px 'Helvetica Neue', Arial, Helvetica, sans-serif; margin:0; padding:0; }
+h1 { font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; float: left; margin: 0 0 10px; }
+a { color: #115B8A; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.lnk-about { float: right; position: relative; top: 3px; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+#map-titleBlock { background-color: #FFF; border: 1px solid #999; left: 10px; letter-spacing: 0; padding: 10px 10px 8px; position: absolute; bottom: 53px; border-radius: 3px 3px 3px 3px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); width: 400px; }
+#map-desc { clear: both; display: block; font-weight: normal; line-height: 16px; }
+#map-ui { position: absolute; top: 10px; right: 10px; z-index: 100; }
+#map-ui ul { list-style: none; margin: 0; padding: 0; }
+#map-ui a { font-size: 13px; background: #FFF; color: #3C4E5A; display: block; margin: 0; padding: 0; border: 1px solid #BBB; border-bottom-width: 0; min-width: 138px; padding: 10px; text-decoration: none; }
+#map-ui a:hover { background: #ECF5FA; }
+#map-ui li:last-child a { border-bottom-width: 1px; -webkit-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; }
+#map-ui li:first-child a { -webkit-border-radius: 3px 3px 0 0; border-radius: 3px 3px 0 0; }
+#map-ui a.active { background: #3887BE; border-color: #3887BE; border-top-color: #FFF; color: #FFF; }
+#map-ui li:first-child a.active { border-top-color: #3887BE; }
+#map .map-fullscreen { background-color: #28353D; }
 
-h1 { 
-	font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
-    margin: 0 0 10px;
-}
-
-#map-titleBlock {
-	background-color: #FFF;
-    border: 1px solid #999;
-    left: 10px;
-    letter-spacing: 0;
-    padding: 10px 10px 8px;
-    position: absolute;
-    bottom: 53px;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    width: 400px;
-}
-
-#map-desc {
-	display: block;
-    font-weight: normal; 
-    line-height: 16px;
-    margin-bottom: 5px;     
-}
-
-#map-ui {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 100;
-}
- 
-#map-ui ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
- 
-#map-ui a {
-    font-size: 13px;
-    background: #FFF;
-    color: #3C4E5A;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #BBB;
-    border-bottom-width: 0;
-    min-width: 138px;
-    padding: 10px;
-    text-decoration: none;
-}
- 
-#map-ui a:hover {
-    background: #ECF5FA;
-}
- 
-#map-ui li:last-child a {
-    border-bottom-width: 1px;
-    -webkit-border-radius: 0 0 3px 3px;
-    border-radius: 0 0 3px 3px;
-}
- 
-#map-ui li:first-child a {
-    -webkit-border-radius: 3px 3px 0 0;
-    border-radius: 3px 3px 0 0;
-}
- 
-#map-ui a.active {
-    background: #3887BE;
-    border-color: #3887BE;
-    border-top-color: #FFF;
-    color: #FFF;
-}
- 
-#map-ui li:first-child a.active {
-    border-top-color: #3887BE;
-}
- 
-#map .map-fullscreen {
-    background-color: #28353D;
-}
 </style>
 <div id='map'>
       <div id='map-ui'>
@@ -118,9 +47,10 @@ h1 {
     </div>
   </div>
 <div id="map-titleBlock">
-      <h1><span id="map-hd">FCC Mobile Speed Test</span> </h1>
+      <h1 id="map-hd">FCC Mobile Speed Test </h1>
+      <a class="lnk-about" href="http://www.fcc.gov/measuring-broadband-america/mobile" target="about_map">About &raquo;</a>
       <div id="map-desc">This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="google_play">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="app_store">iTunes app store</a>.</div>      
-      <a href="http://www.fcc.gov/measuring-broadband-america/mobile" target="about_map" style="float: right;">Learn more about these maps &raquo;</a>
+      
   </div>
 <script>
 var map = L.mapbox.map('map', 'fcc.map-kzt95hy6', {attributionControl: false,maxZoom:8})
