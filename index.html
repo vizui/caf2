@@ -42,32 +42,7 @@ h1 {
 #map-desc {
 	display: block;
     font-weight: normal; 
-    line-height: normal;
-    margin-bottom: 10px;    
-}
-
-#btns-appStore { 
-	list-style-type: none; 
-    margin: 0; 
-    padding: 0; 
-}
-
-#btns-appStore li { 
-	float: left; 
-    margin: 0 5px 0 0; 
-}
-
-#btns-appStore a, #btns-appStore img { 
-	display: block; 
-}
-
-#btns-appStore a { 
-    height: 40px;
-}
-
-#btns-appStore img {
-    border: none;    
-    height: 100%;
+    line-height: 16px;     
 }
 
 #map-ui {
@@ -141,13 +116,7 @@ h1 {
   </div>
 <div id="map-titleBlock">
       <h1><span id="map-hd">FCC Mobile Speed Test</span> </h1>
-      <div id="map-desc">This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the Google Play or iTunes app store.</div>
-      <div>
-        <ul id="btns-appStore">
-              <li><a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new"> <img alt="Get it on Google Play" src="img/google-play-large.png" /> </a></li>
-              <li><a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new"><img alt="Get it on Google Play" src="img/app-store-large.png" /></a></li>
-          </ul>
-    </div>
+      <div id="map-desc">This map represents the number of mobile speed tests collected to date on all networks by the FCC Mobile Speed Test app. These are early results, and the maps are a work in progress. The intent is to show preliminary activity from the project. Crowdsourced maps evolve and change over time as more users participate in the program; to contribute your results, download the FCC Speed Test app from the <a href="https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en" target="_new">Google Play</a> or <a href="https://itunes.apple.com/us/app/fcc-speed-test/id794322383?mt=8&uo=4" target="_new">iTunes app store</a>.</div>      
   </div>
 <script>
 var map = L.mapbox.map('map', 'fcc.map-kzt95hy6', {attributionControl: false,maxZoom:8})
