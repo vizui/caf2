@@ -13,11 +13,11 @@ In September 2012, the FCC announced it was expanding the program to include inf
 
 The FCC has taken significant measures to ensure the privacy and confidentiality of volunteers for this program. All data is collected anonymously, and no personally-identifiable information is collected. Using privacy measures developed and reviewed by FTC officials and academic privacy experts, any data that could potentially identify specific smartphones is analyzed and processed to ensure that subscribers’ privacy interests are protected. The FCC is committed to ensuring that only network data is collected. See our [Mobile Terms and Conditions and Privacy Policy](http://www.fcc.gov/measuring-broadband-america/mobile/mobile-terms-privacy-notice.html) for details.
 
-##### How it Works
-
 <aside class="text">
   <p class="caption"><a class="back-top" href="#top" title="Back to the map">Back to the map</a></p>
 </aside>
+
+##### How it Works
 
 The [FCC Speed Test app](https://play.google.com/store/apps/details?id=com.samknows.fcc&hl=en) is available for Android phones from Google Play and for iPhone from the Apple App Store. The application will measure mobile broadband performance in four active categories: download speed, upload speed, latency and packet loss. To better analyze wireless broadband performance, several other passive metrics are recorded, such as signal strength of the connection, and device manufacturer and model. The application tests run periodically in the background.
 
