@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,400italic,600,600italic,700);
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+}
+
 /* standard */
 html {
   font-size: 62.5%;
@@ -23,6 +27,30 @@ a:visited {
 a:hover {
   color:#E53724 /* #E7A024*/;
   text-decoration: underline;
+}
+.sel.active {
+  border-bottom: 2px solid;
+}
+.sel.active:hover {
+  text-decoration: none;
+}
+#mayor.sel.active {
+  color: #3DA659;
+}
+#ds_att.sel.active {
+  color: #3D8DC3;
+}
+#ds_sprint.sel.active {
+  color: #505150;
+}
+#ds_tmobile.sel.active {
+  color: #FF4FD6;
+}
+#ds_vz.sel.active {
+  color: #D70002;
+}
+#ds_all.sel.active {
+  color: #F79030;
 }
 header {
   color:#ffffff;
@@ -90,6 +118,16 @@ p, ol, ul, li, address {
   font-weight: normal;
   line-height: 150%;
   margin: 0 0 20px;
+}
+ul.inline {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  text-align: center;
+}
+ul.inline li {
+  display: inline-block;
+  margin-right: 10px;
 }
 strong, b {
   color: #212326;
@@ -166,21 +204,20 @@ hr {
   max-width: 1200px;
   position: relative;
 }
+.content {
+  margin: 0 auto 50px auto;
+  position: relative;
+  width: 96%;
+}
 #title .content {
-  margin-bottom: 0;
+  margin: 85px auto 0 auto;
 }
 #title .content p {
   margin-bottom: 0;
 }
 #map-c .content {
-  margin-top: 20px;
+  margin: 20px auto 20px;
 }
-.content {
-  margin: 85px auto 50px auto;
-  position: relative;
-  width: 96%;
-}
-
 .title {
   line-height: 1.2;
   margin: 0 0 25px 0;
@@ -203,6 +240,12 @@ figure.large img {
   background-color: #dddddd;
   height: 200px;
   margin-bottom: 20px;
+}
+#map-legend span {
+  display: block;
+  float: right;
+  height: 15px;
+  width: 30px;
 }
 
 .img {
@@ -275,9 +318,12 @@ table {
 th {
   text-align: left;
 }
+#map-legend .table {
+  margin: 0 auto;
+}
 .table {
   font-size: 12px;
-  margin-bottom: 20px;
+  margin: 0;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -323,7 +369,7 @@ th {
     width: 200px;
   }
   #map-c .content {
-    width: 1200px;
+    width: 590px;
   }
   .content {
     width: 590px;
@@ -382,6 +428,7 @@ th {
   }
   #map-legend {
     float: none;
+    margin-top: 0;
   }
 }
 @media (min-width: 1210px) {
@@ -414,6 +461,7 @@ th {
   }
   #map-legend {
     float: right;
+    top: -90px;
     width: 33.33333%;
   }
 
