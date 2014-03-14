@@ -64,7 +64,9 @@
    
 <script>
 var map = L.mapbox.map('map', 'fcc.map-kzt95hy6', {attributionControl: false,maxZoom:8})
-            .setView([40.58, -75.21], 6);
+            .setView([38.82, -94.96], 4);
+map.scrollWheelZoom.disable();
+
 var hash = L.hash(map);
 L.control.fullscreen().addTo(map);
 var activeLayerGroup = new L.LayerGroup();
@@ -79,7 +81,6 @@ activeLayerGroup.addLayer(mayor_TL);
 activeLayerGroup.addLayer(mayor_GL);
 activeLayerGroup.addLayer(mayor_GC);
 activeLayerGroup.addTo(map,function(){console.log('done')});
-// REMOVE LEGEND/map.legendControl.addLegend(mayor_TL.getTileJSON().legend);
 
 var ds_all_TL = L.mapbox.tileLayer('fcc.lwok1emi');
 var ds_all_GL = L.mapbox.gridLayer('fcc.lwok1emi');
@@ -141,16 +142,14 @@ d3.selectAll(".sel").on("click", function(){
     d3.select('.map-legend').remove();
     d3.selectAll(".sel").attr("class","sel inactive");
     d3.select(this).attr("class","sel active");
-    //REMOVE LEGEND
-    //map.legendControl.removeLegend(eval(tileName+"_TL").getTileJSON().legend);
+    
     tileName = d3.select(this).attr("id");
     activeLayerGroup.clearLayers();
      
     activeLayerGroup.addLayer(eval(tileName+"_TL"));
     activeLayerGroup.addLayer(eval(tileName+"_GL"));
     activeLayerGroup.addLayer(eval(tileName+"_GC"));
-    // REMOVE LEGEND
-    //map.legendControl.addLegend(eval(tileName+"_TL").getTileJSON().legend);
+    
   
     d3.select('#map-hd').text(mapHd[this.id].title);
     d3.select('#map-desc').html(mapHd[this.id].description);

@@ -1,6 +1,10 @@
 ---
 layout: map
 ---
+<aside class="text">
+  <p class="caption"><a class="back-top" href="#top">Back to the map</a></p>
+</aside>
+
 ####About
 {#about}
 
