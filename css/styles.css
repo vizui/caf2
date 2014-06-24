@@ -12,7 +12,7 @@ html {
 body {
   color: #51545B;
   font-family: "Source Sans Pro";
-  font-size: 1.6rem;
+  font-size: 16px;
   height: 100%;
   margin: 0;
   padding: 0 10px;
@@ -71,7 +71,7 @@ header nav a:link {
   color: #ffffff;
   border-radius: 2px;
   display: block;
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
   padding: 3px 6px;
@@ -88,7 +88,7 @@ nav#small {
   display:inline;
   float:right;
   padding: 21px 0 10px 10px;
-  width:2.5rem;
+  width: 25px;
 }
 nav#large {
   background-color: #373A41;
@@ -134,7 +134,7 @@ strong, b {
 }
 .caption {
   color: #777777;
-  font-size: 1.2rem;
+  font-size: 12px;
   margin-top: 5px;
 }
 #help-text {
@@ -164,19 +164,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 h1 {
-  font-size: 3.6rem;
+  font-size: 26px;
 }
 h2 {
- font-size: 3.0rem;
+ font-size: 30px;
 }
 h3 {
-  font-size: 2.4rem;
+  font-size: 24px;
 }
 h4 {
-  font-size: 1.8rem;
+  font-size: 18px;
 }
 h5 {
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 h5.tract {
   font-weight: normal;
@@ -191,12 +191,12 @@ h5 #stat-tract {
   margin-top: 3px;
 }
 h6 {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 hr {
   border: none;
   border-top: 1px solid #dddddd;
-  margin: 4rem 0;
+  margin: 40px 0;
 }
 
 .container {
@@ -225,7 +225,7 @@ hr {
 
 .intro {
   color: #212326;
-  font-size: 1.8rem;
+  font-size: 18px;
 }
 
 #map, figure.large, table.large  {
@@ -256,7 +256,7 @@ figure.large img {
 }
 
 aside, .aside {
-  font-size: 1.4rem;
+  font-size: 14px;
   margin-top: 20px;
 }
 aside.text {
@@ -280,11 +280,11 @@ hgroup {
   margin: 0 0 25px 0;
 }
 hgroup h2 {
-  font-size: 1.6rem;
+  font-size: 16px;
   margin-bottom: 0;
 }
 hgroup h4 {
-  font-size: 3.0rem;
+  font-size: 30px;
   margin-top: 10px;
   line-height: 1.2;
 }
@@ -303,13 +303,13 @@ input {
   border: 1px solid #dddddd;
   border-radius: 2px;
   font-family: "Source Sans Pro";
-  font-size: 1.6rem;
+  font-size: 16px;
   padding: 4px;
 }
 
 table {
   font-family: "Source Sans Pro";
-  font-size: 1.4rem;
+  font-size: 14px;
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
@@ -439,9 +439,9 @@ th {
   .byline h6.date {
     border-top: 1px solid #dddddd;
     color: #999999;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    padding-top: 2rem;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
   }
   .content {
     width: 45.833333%;
