@@ -432,6 +432,14 @@ th {
     margin-top: 0;
   }
 }
+@media (min-width: 800px) {
+  #map, figure.large, table.large  {
+    height: 400px;
+    margin:  0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 @media (min-width: 1210px) {
   .avatar {
     float: none;
@@ -465,14 +473,6 @@ th {
 
   hr {
     width: 875px;
-  }
-
-
-  #map, figure.large, table.large  {
-    height: 300px;
-    margin:  0 auto;
-    max-width: 1200px;
-    width: 1200px;
   }
 
   figure.large img, .large {
