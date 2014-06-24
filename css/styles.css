@@ -324,6 +324,7 @@ th {
 .table {
   font-size: 12px;
   margin: 0;
+  width: 100%;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -443,9 +444,6 @@ th {
     margin-top: 20px;
     padding-top: 20px;
   }
-  .content {
-    width: 45.833333%;
-  }
   #map-c .content {
     width: 1200px;
   }
@@ -459,11 +457,11 @@ th {
   .data .sect-divider {
     float: left; width: 45%; margin-right: 5%;
   }
-  #map-legend {
+  /*#map-legend {
     float: right;
     top: -90px;
     width: 33.33333%;
-  }
+  }*/
 
   hr {
     width: 875px;
