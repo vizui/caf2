@@ -10,19 +10,17 @@
       <div id="map"></div>
     </div>
     <div class="col col-3">
-      <h5 class="tract">Selected Tract <span id="stat-tract">---------</span></h5>
-      <h6><span id="stat-cnty">------</span> County, <span id="stat-state">--</span></h6>
+      <h5 class="tract">Selected Tract: <span id="stat-tract">---------</span></h5>
+      <small><span id="stat-cnty">------</span> County, <span id="stat-state">--</span></small>
       <div class="group">
         <section class="col">
           <dl class="dl-statTract dl-inline">
-            <dt>Locations Unserved<sup>1</sup> </dt>
-            <dd><span id="stat-totloc">----</span></dd>
+            <dt>Price cap Locations Between<sup>1</sup> </dt>
+            <dd><span id="stat-pclocbtwn">----</span></dd>
             <dt>Total Annual Support</dt>
-            <dd>$ <span id="stat-totsup">----</span></dd>
-            <dt>Price cap</dt>
             <dd>$ <span id="stat-pcannsup">----</span></dd>
-            <dt>Rate-of-return</dt>
-            <dd>$ <span id="stat-rorannsup">----</span></dd>
+            <dt>Price cap locations Above</dt>
+            <dd><span id="stat-pclocabv">----</span></dd>
           </dl>
         </section>
       </div>
@@ -78,7 +76,7 @@
 
    
 <script>
-var map = L.mapbox.map('map', 'fcc.map-kzt95hy6', {attributionControl: false,maxZoom:10})
+var map = L.mapbox.map('map', 'fcc.map-kzt95hy6,fcc.pj3mobt9', {attributionControl: false,gridControl: false,maxZoom:10})
             .setView([38.82, -94.96], 4);
 map.scrollWheelZoom.disable();
 
@@ -100,6 +98,41 @@ activeLayerGroup.addTo(map,function(){console.log('done')});
 var cam411_10_768_TL = L.mapbox.tileLayer('fcc.hjl40a4i');
 var cam411_10_768_GL = L.mapbox.gridLayer('fcc.hjl40a4i');
 var cam411_10_768_GC = L.mapbox.gridControl(cam411_10_768_GL, {follow: true});
+
+// Display the map tooltip in the sidebar
+map.gridLayer.on('mousemove',function(o) {
+
+	var data;
+
+	if (o.data != undefined) {
+	   data = o.data;   
+
+		// Populate location other stats (teaser fields from map)
+		$('#stat-cnty').text(data.county_name);
+		$('#stat-state').text(data.state);		
+		$('#stat-tract').text(data.tract);
+
+		// Additional Cost Stats (teaser fields from map)		
+		$('#stat-pclocbtwn').text(data.pc_locations_between);
+		$('#stat-pclocabv').text(data.pc_locations_above_ttc);
+		$('#stat-pcannsup').text(formatComma(data.pc_annual_support));
+
+
+	} else { // Reset the text labels
+		$('#stat-tract').text('---------');
+		$('#stat-cnty').text('------');
+		$('#stat-state, #stat-pcannsup').text('--');
+		$('#stat-pclocbtwn, #stat-pclocabv').text('----');
+		$('#dl-numLocs').find('span').text('-----');	
+	}
+
+});      
+
+// Format dummy data with commas
+function formatComma(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 var mapHd = {
   cam411: {
