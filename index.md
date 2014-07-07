@@ -1,5 +1,8 @@
 ---
 layout: map
+
+help: Zoom in to display tract level details on click / touch below.
+note: Compatible with current versions of Chrome, Firefox, or Safari browsers.
 ---
 ##### {{ site.title }}
 

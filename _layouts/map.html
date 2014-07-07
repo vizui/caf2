@@ -3,8 +3,8 @@
 <div class="container">
   <div class="col">
     <h3>{{ site.title }}</h3>
-    <p id="help-text">Zoom in to display tract level details on click / touch below.</p>
-    <p class="note">Compatible with current versions of Chrome, Firefox, or Safari browsers.</p>
+    <p id="help-text">{{ page.help }}</p>
+    <p class="note">{{ page.note }}</p>
   </div>
 </div>
 
@@ -14,65 +14,15 @@
       <div id="map"></div>
     </div>
     <div class="col col-3">
-      <h5 class="tract">Selected Tract: <span id="stat-tract">---</span></h5>
-      <small><span id="stat-cnty">---</span> County, <span id="stat-state">--</span></small>
-      <hr class="small">
-      <dl class="dl-statTract dl-inline">
-        <dt>Price cap Locations Between<sup>1</sup></dt>
-        <dd><span id="stat-pclocbtwn">---</span></dd>
-        <dt>Total Annual Support</dt>
-        <dd>$ <span id="stat-pcannsup">---</span></dd>
-        <hr class="small">
-        <dt>Price cap locations Above</dt>
-        <dd><span id="stat-pclocabv">---</span></dd>
-      </dl>
+      {% include data.html %}
       <hr>
-      <section id="map-legend">   
-        <table class="table table-legend table-data">
-          <caption>
-          Model Landscape
-          </caption>
-          <thead>
-            <tr>
-              <th>Cost per location</th>
-              <th align="center">Served<sup>1</sup></th>
-              <th align="center">Unserved<sup>1</sup></th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <td colspan="3"><sup>1</sup> This map only shows Price-Cap areas.</td>
-            </tr>
-          </tfoot>
-          <tbody>
-            <tr>
-              <td style="white-space: nowrap;"><strong>Above</strong><br>
-                  Price cap: &ge; $207.81</td>
-              <td align="center"><span class="key-symbol" style="background-color:#FFACA1"></span></td>
-              <td align="center"><span class="key-symbol" style="background-color:#DC4E3D"></span></td>
-            </tr>
-            <tr>
-              <td style="white-space: nowrap;"><strong>Between</strong> <br>
-                  Price cap: &gt; $52.50 and &lt; $207.81</td>
-              <td align="center"><span class="key-symbol" style="background-color:#C4F489"></span></td>
-              <td align="center"><span class="key-symbol" style="background-color:#28925B"></span></td>
-            </tr>
-            <tr>
-              <td style="white-space: nowrap;"><strong>Below</strong> <br>
-                  Price cap: &le; $52.50</td>
-              <td align="center"><span class="key-symbol" style="background-color:#FBDA62"></span></td>
-              <td align="center"><span class="key-symbol" style="background-color:#D99442"></span></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      {% include legend.html %}
     </div>
   </div>
-</div>
-<div class="container">
   <hr>
   <div class="content">
     {{ content }}    
   </div>
 </div>
+
 {% include footer.html %}
