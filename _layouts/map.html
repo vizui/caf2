@@ -1,7 +1,11 @@
 {% include header.html %}
 
 <div class="container">
+  <div class="col">
     <h3>{{ site.title }}</h3>
+    <p id="help-text">Zoom in to display tract level details on click / touch below.</p>
+    <p class="note">Compatible with current versions of Chrome, Firefox, or Safari browsers.</p>
+  </div>
 </div>
 
 <div class="container">
@@ -10,20 +14,18 @@
       <div id="map"></div>
     </div>
     <div class="col col-3">
-      <h5 class="tract">Selected Tract: <span id="stat-tract">---------</span></h5>
-      <small><span id="stat-cnty">------</span> County, <span id="stat-state">--</span></small>
-      <div class="group">
-        <section class="col">
-          <dl class="dl-statTract dl-inline">
-            <dt>Price cap Locations Between<sup>1</sup> </dt>
-            <dd><span id="stat-pclocbtwn">----</span></dd>
-            <dt>Total Annual Support</dt>
-            <dd>$ <span id="stat-pcannsup">----</span></dd>
-            <dt>Price cap locations Above</dt>
-            <dd><span id="stat-pclocabv">----</span></dd>
-          </dl>
-        </section>
-      </div>
+      <h5 class="tract">Selected Tract: <span id="stat-tract">---</span></h5>
+      <small><span id="stat-cnty">---</span> County, <span id="stat-state">--</span></small>
+      <hr class="small">
+      <dl class="dl-statTract dl-inline">
+        <dt>Price cap Locations Between<sup>1</sup></dt>
+        <dd><span id="stat-pclocbtwn">---</span></dd>
+        <dt>Total Annual Support</dt>
+        <dd>$ <span id="stat-pcannsup">---</span></dd>
+        <hr class="small">
+        <dt>Price cap locations Above</dt>
+        <dd><span id="stat-pclocabv">---</span></dd>
+      </dl>
       <hr>
       <section id="map-legend">   
         <table class="table table-legend table-data">
@@ -39,7 +41,7 @@
           </thead>
           <tfoot>
             <tr>
-              <td colspan=3><sup>1</sup>This map only shows Price-Cap areas.</td>
+              <td colspan="3"><sup>1</sup> This map only shows Price-Cap areas.</td>
             </tr>
           </tfoot>
           <tbody>
@@ -73,102 +75,4 @@
     {{ content }}    
   </div>
 </div>
-
-   
-<script>
-var map = L.mapbox.map('map', 'fcc.map-kzt95hy6,fcc.pj3mobt9', {attributionControl: false,gridControl: false,maxZoom:10})
-            .setView([38.82, -94.96], 4);
-map.scrollWheelZoom.disable();
-
-var hash = L.hash(map);
-L.control.fullscreen().addTo(map);
-var activeLayerGroup = new L.LayerGroup();
-var cam411_TL = L.mapbox.tileLayer('fcc.h9d1v2t9')
-                    .on('load',function(){/* REMOVE LEGEND  map.legendControl.addLegend(cam411_TL.getTileJSON().legend);*/
-                                        cam411_TL.removeEventListener();})
-var cam411_GL = L.mapbox.gridLayer('fcc.h9d1v2t9')
-var cam411_GC = L.mapbox.gridControl(cam411_GL, {follow: true})//.addTo(map);
-var tileName = "cam411";
-
-activeLayerGroup.addLayer(cam411_TL);
-activeLayerGroup.addLayer(cam411_GL);
-activeLayerGroup.addLayer(cam411_GC);
-activeLayerGroup.addTo(map,function(){console.log('done')});
-
-var cam411_10_768_TL = L.mapbox.tileLayer('fcc.hjl40a4i');
-var cam411_10_768_GL = L.mapbox.gridLayer('fcc.hjl40a4i');
-var cam411_10_768_GC = L.mapbox.gridControl(cam411_10_768_GL, {follow: true});
-
-// Display the map tooltip in the sidebar
-map.gridLayer.on('mousemove',function(o) {
-
-	var data;
-
-	if (o.data != undefined) {
-	   data = o.data;   
-
-		// Populate location other stats (teaser fields from map)
-		$('#stat-cnty').text(data.county_name);
-		$('#stat-state').text(data.state);		
-		$('#stat-tract').text(data.tract);
-
-		// Additional Cost Stats (teaser fields from map)		
-		$('#stat-pclocbtwn').text(data.pc_locations_between);
-		$('#stat-pclocabv').text(data.pc_locations_above_ttc);
-		$('#stat-pcannsup').text(formatComma(data.pc_annual_support));
-
-
-	} else { // Reset the text labels
-		$('#stat-tract').text('---------');
-		$('#stat-cnty').text('------');
-		$('#stat-state, #stat-pcannsup').text('--');
-		$('#stat-pclocbtwn, #stat-pclocabv').text('----');
-		$('#dl-numLocs').find('span').text('-----');	
-	}
-
-});      
-
-// Format dummy data with commas
-function formatComma(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-
-var mapHd = {
-  cam411: {
-    title: '{{ site.title }}',
-    description: 'This map identifies the areas that have been initially determined to be eligible for ongoing Phase II Connect America support, which are shown in dark green on the map.  The map displays the outputs of the adopted version of the Connect America Cost Model (CAM) (version 4.1.1), which calculates costs per location in all price cap carrier study areas for the entire country. Areas marked as “served” are reported as having Internet access of at least 3 Mbps downstream and 768 kbps upstream from an unsubsidized competitor.  The map is based on round 8 State Broadband Initiative Data (data as of June 2013).',
-    legend: ''
-  },
-  cam411_10_768: {
-    title: 'Cost Model 10/768 Map',
-    description: 'The map displays the outputs of the CACM, which calculates costs per location for the entire country. Areas marked as “served” are believed to have Internet access of at least <strong>10 Mbps downstream and 768 kbps upstream</strong> from a cable or fixed-wireless provider (according to State Broadband Initiative data, round 7, data as of December 2012) that reports it provides voice service on FCC Form 477 and does not receive high-cost USF support.',
-    legend: ''  
-  }
-}
-
-d3.selectAll(".sel").on("click", function(){
-  if (d3.select(this).classed("active")){
-      //do nothing
-  } else {
-    // d3.select('.map-legend').remove();
-    d3.selectAll(".sel").attr("class","sel inactive");
-    d3.select(this).attr("class","sel active");
-    
-    tileName = d3.select(this).attr("id");
-    activeLayerGroup.clearLayers();
-     
-    activeLayerGroup.addLayer(eval(tileName+"_TL"));
-    activeLayerGroup.addLayer(eval(tileName+"_GL"));
-    activeLayerGroup.addLayer(eval(tileName+"_GC"));
-    
-  
-    d3.select('#map-hd').text(mapHd[this.id].title);
-    d3.select('#map-desc').html(mapHd[this.id].description);
-    // d3.select('#map-legend').html(mapHd[this.id].legend);   
-  }
-});
- 
-</script>
-
 {% include footer.html %}
