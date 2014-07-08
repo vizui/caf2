@@ -178,10 +178,24 @@ hr.small {
   }
 }
 
-#map-legend span {
+.data, .map-legend {
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+  .data {
+    float: left;
+    width: 30%;
+  }
+  .map-legend {
+    float: right;
+  }
+}
+
+.map-legend span {
   display: block;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
 }
 table {
   font-family: "Source Sans Pro";
@@ -191,11 +205,11 @@ table {
   border-spacing: 0;
   margin: 20px 0;
 }
-#map-legend .table {
+.map-legend .table {
   margin: 0 auto;
 }
 .table {
-  font-size: 12px;
+  font-size: 11px;
   margin: 0;
   width: 100%;
 }
@@ -205,7 +219,8 @@ table {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 8px;
+  color: #212326;
+  padding: 5px;
   line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -213,7 +228,6 @@ table {
 .table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #dddddd;
-  color: #212326;
 }
 .table > thead:last-child > tr > th {
   vertical-align: bottom;
