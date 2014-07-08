@@ -106,6 +106,7 @@ h5 {
 }
 h5.tract {
   font-weight: normal;
+  margin-top: 0;
 }
 h5 #stat-tract {
   color: #212326;
@@ -127,23 +128,16 @@ hr {
   }
 }
 hr.small {
+  border-top-style: dotted;
+  margin-bottom: 20px;
+  margin-top: 20px;
   width: 100px;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1140px;
   position: relative;
-}
-.content {
-  margin: 0 auto 50px auto;
-  position: relative;
-  max-width: 600px;
-}
-@media (min-width: 600px) {
-  .content {
-    width: 590px;
-  }
 }
 
 .group:after {
