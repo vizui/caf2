@@ -35,7 +35,7 @@ var cam411_10_768_GL = L.mapbox.gridLayer('fcc.hjl40a4i');
 var cam411_10_768_GC = L.mapbox.gridControl(cam411_10_768_GL, { follow: true });
 
 // Display the map data in the sidebar
-map.gridLayer.on('mousemove click',function(o) {
+map.gridLayer.on('click',function(o) {
   var data;
   if (o.data != undefined) {
      data = o.data;   
