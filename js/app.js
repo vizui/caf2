@@ -15,6 +15,8 @@ var map = L.mapbox.map('map', 'fcc.map-kzt95hy6,fcc.pj3mobt9', { attributionCont
             .setView([38.82, -94.96], 4);
 map.scrollWheelZoom.disable();
 
+var hash = L.hash(map);
+
 L.control.fullscreen().addTo(map);
 var activeLayerGroup = new L.LayerGroup();
 var cam411_TL = L.mapbox.tileLayer('fcc.h9d1v2t9')
