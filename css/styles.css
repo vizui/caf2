@@ -163,6 +163,19 @@ hr.small {
     width: 25%;
   }
 }
+.frame .col {
+  float: left;
+  margin: 0 2.5%;
+}
+.frame .col-half {
+  width: 45%;
+}
+.frame .col-7 {
+  width: 65%;
+}
+.frame .col-3 {
+  width: 25%;
+}
 
 #map {
   background-color: #dddddd;
@@ -178,10 +191,6 @@ hr.small {
   }
 }
 
-.data, .map-legend {
-  margin-bottom: 40px;
-}
-
 @media only screen and (min-width: 700px) and (max-width: 1024px) {
   .data {
     float: left;
@@ -190,6 +199,10 @@ hr.small {
   .map-legend {
     float: right;
   }
+}
+
+.frame .data {
+  width: 100%;
 }
 
 .map-legend span {
