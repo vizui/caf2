@@ -1,8 +1,3 @@
 ---
 layout: map
 ---
-##### {{ site.title }}
-
-This map identifies the areas that have been initially determined to be eligible for ongoing Phase II Connect America support, which are shown in dark green on the map.  The map displays the outputs of the adopted version of the Connect America Cost Model (CAM) (version 4.1.1), which calculates costs per location in all price cap carrier study areas for the entire country. Areas marked as “served” are reported as having Internet access of at least 3 Mbps downstream and 768 kbps upstream from an unsubsidized competitor.  The map is based on round 8 State Broadband Initiative Data (data as of June 2013).
-
-Areas on the map fall into one of six categories: served/above cost, served/between cost, served/below cost, unserved/above cost, unserved/between cost, and unserved/below cost.  The Wireline Competition Bureau has made an initial determination that areas shown as unserved/between cost on the map are eligible for Phase II support, subject to a challenge process.  An area is classified as “between cost” if the average monthly cost-per-location for that census block, as calculated by the cost model, is above $52.50 but below $207.81.  An area is classified as “unserved” if it is reported to lack service meeting the requisite speed from an unsubsidized competitor.   Areas shown in grey (i.e., not falling into one of the six categories) are either located in rate-of-return study areas and/or are reported as uninhabited.  The map will be updated after completion of the Phase II challenge process.
