@@ -1,6 +1,7 @@
 <div class="data">
-  <h5 class="tract">Selected Tract: <span id="stat-tract">---</span></h5>
-  <small><span id="stat-cnty">---</span> County, <span id="stat-state">--</span></small>
+  <h5 class="tract">Selected Tract: <span id="stat-tract">---</span>    
+  </h5>
+  <small><span id="stat-cnty">---</span> County, <span id="stat-state">--</span></small>  
   <table class="table table-bordered">
     <caption>Price Cap Between</caption>
     <thead>
@@ -28,7 +29,7 @@
         <td><span id="stat-pclocabv">---</span></td>
       </tr>
     </tbody>
-  </table>
+  </table>  
   <!--<dl class="dl-statTract dl-inline">
     <dt>Price cap Between<sup>1</sup></dt>
     <dd>&nbsp;total locations: </dd>
@@ -37,5 +38,35 @@
     <dt>Price cap Above</dt>
     <dd>&nbsp;total locations: </dd>
   </dl>-->
+  <div id="download-geo">
+	Download a geospatial file of eligible blocks for: 
+	<br/>
+	<table id="download-table">
+		<tr>
+			<td>
+				County
+				<br/>
+				<select id="download-county">
+					<option value="">(Download)</option>
+					<option value="application/json">GeoJSON</option>
+					<option value="shape-zip">Shapefile</option>
+					<option value="kml">KML</option>
+					<option value="csv">CSV</option>
+				</select>
+			</td>
+			<td>
+				Tract
+				<br/>
+				<select id="download-tract">
+					<option value="">(Download)</option>
+					<option value="application/json">GeoJSON</option>
+					<option value="shape-zip">Shapefile</option>
+					<option value="kml">KML</option>
+					<option value="csv">CSV</option>
+				</select>
+			</td>
+		</tr>
+	</table> 	
+  </div>
   <hr class="small">
 </div>
