@@ -179,6 +179,10 @@ hr.small {
   width: 25%;
 }
 
+.map-container {
+    position: relative;
+}
+
 #map {
   background-color: #dddddd;
   height: 360px;
@@ -320,8 +324,8 @@ table {
 	border: 1px solid #ddd !important;
 	font-weight: 400;
 	font-size: 16px;
-	height: 28px;
-	padding: 0px 4px;
+	height: 36px;
+	padding: 6px 12px;
 	color: #444;
 }
 #search input:focus {	
@@ -329,12 +333,13 @@ table {
 	outline: none;
 }
 .btn-geoLocation, .btn-geoLocation:hover {
-	border: 1px solid rgba(0, 0, 0, 0.4);
+	border: 1px solid #CCC;
+    border-bottom: none;
 	border-radius: 2px;
 	left: 10px;
-	top: 138px;
+	top: 113px;
 	padding: 4px;
-	position: relative;
+	position: absolute;
 	cursor: pointer;
 	z-index: 9;
 	width: 28px;

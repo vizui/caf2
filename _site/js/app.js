@@ -86,8 +86,15 @@ $(document).ready(function () {
 		}
 		//alert('cql_filter : ' + cql_filter );		
 		
-		if ((output_format != '') && ($.isNumeric(tract_fips))) {
-			window.open('http://ldevtm-geo01:8010/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2&outputFormat='+ output_format +'&cql_filter='+ cql_filter, '_new');
+		if ((output_format != '') && ($.isNumeric(tract_fips))) {			
+			
+			if (output_format == 'kml') {
+				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/wms?service=WMS&version=1.1.0&request=GetMap&layers=gis_swat:caf2_geom&styles=&bbox=-180.0,-90.0,180.0,90.0&width=500&height=500&srs=EPSG:4326&format=kml&cql_filter='+ cql_filter, '_new');
+			}
+			else {
+				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter, '_new');
+			}		
+			
 			$('#download-county option[value=""]').prop('selected', true);
 			$('#download-tract option[value=""]').prop('selected', true);
 		}
