@@ -77,22 +77,28 @@ $(document).ready(function () {
 		var tract_fips = $('#stat-tract').text();
 		var county_fips = $('#stat-tract').text().substring(0,5);
 	
-		var cql_filter;	
+		var cql_filter, file_name;	
 		if (download_type == 'download-tract') {
-			cql_filter = 'tract_fips='+ tract_fips;
+			cql_filter = 'tract_fips=%27'+ tract_fips +'%27';
+			file_name = '' + tract_fips +'.'+ output_format;
 		}
 		else if (download_type == 'download-county') {
-			cql_filter = 'county_fips='+ county_fips;
+			cql_filter = 'county_fips=%27'+ county_fips +'%27';
+			file_name = '' + county_fips +'.'+ output_format;
 		}
 		//alert('cql_filter : ' + cql_filter );		
+		//alert('file_name : ' + file_name );	
 		
 		if ((output_format != '') && ($.isNumeric(tract_fips))) {			
 			
 			if (output_format == 'kml') {
-				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/wms?service=WMS&version=1.1.0&request=GetMap&layers=gis_swat:caf2_geom&styles=&bbox=-180.0,-90.0,180.0,90.0&width=500&height=500&srs=EPSG:4326&format=kml&cql_filter='+ cql_filter, '_new');
+				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/wms?service=WMS&version=1.1.0&request=GetMap&layers=gis_swat:caf2_geom&styles=&bbox=-180.0,-90.0,180.0,90.0&width=500&height=500&srs=EPSG:4326&format=kml&cql_filter='+ cql_filter);
+			}
+			else if (output_format == 'json') {
+				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter, '_blank');
 			}
 			else {
-				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter, '_new');
+				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter);
 			}		
 			
 			$('#download-county option[value=""]').prop('selected', true);
