@@ -96,7 +96,7 @@ $(document).ready(function () {
 			}
 			else if (output_format == 'json') {
 				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter, '_blank');
-			}
+			} 
 			else {
 				window.open('http://www.broadbandmap.gov/geoserver/gis_swat/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis_swat:caf2_geom&outputFormat='+ output_format +'&cql_filter='+ cql_filter);
 			}		
