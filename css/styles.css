@@ -19,14 +19,14 @@ body {
   padding: 40px 10px 0;
 }
 a:link {
-  color: #55A3CA;
+  color: #337b94;
   text-decoration: none;
 }
 a:visited {
-  color:#6824E5;
+  color:#337b94;
 }
 a:hover {
-  color:#E53724 /* #E7A024*/;
+  color:#337b94 /* #E7A024*/;
   text-decoration: underline;
 }
 
